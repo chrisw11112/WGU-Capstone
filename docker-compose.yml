@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  frontend:
+    build:
+      context: ./Wgu Capstone Front End/Wgu Capstone
+      dockerfile: dockerfile
+    container_name: capstone-frontend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - backend
+  
+  backend:
+    build:
+      context: ./Wgu Capstone
+      dockerfile: Dockerfile
+    container_name: wgu-backend
+    ports:
+      - "8000:8000"
+    
